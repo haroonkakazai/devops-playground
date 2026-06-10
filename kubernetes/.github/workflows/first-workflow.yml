@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: Run a one-line script
-        run: echo "Hello, Haroon! This is your first workflow running on GitHub Actions."
+        run: echo "Hello, Haroon! This is your first workflow running on GitHub Actions. Congratulations on setting it up successfully!"
