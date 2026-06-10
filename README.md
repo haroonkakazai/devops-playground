@@ -21,8 +21,6 @@ Topics covered include:
 ---
 
 ## Repository Structure
-
-```text
 devops-playground/
 ├── kubernetes/
 │   └── nginx-static-site/
@@ -37,14 +35,12 @@ Kubernetes	nginx-static-site	Deploying a static website using Docker and Kuberne
 Learning Approach
 
 For every project I try to:
-
 Understand the underlying concepts
 Build the solution from scratch
 Document the setup and commands
 Track mistakes and learnings
 Follow industry best practices
+
 Author
-
 Haroon Malik
-
 Software Engineer | QA Engineer | DevOps Learner

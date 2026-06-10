@@ -17,8 +17,6 @@ The website is served using Nginx inside a Docker container.
 ---
 
 ## Project Structure
-
-```text
 nginx-static-site/
 ├── Dockerfile
 ├── index.html
@@ -33,29 +31,28 @@ Verify image: docker images
 Run locally: docker run -p 8080:80 my-app
 Access: http://localhost:8080
 
-Kubernetes Deployment
+## Kubernetes Deployment
 Create Deployment: kubectl apply -f deployment.yaml
 Verify Pods: kubectl get pods
 Verify Deployment: kubectl get deployments
 
-Kubernetes Service
+## Kubernetes Service
 Create Service: kubectl apply -f service.yaml
 Verify Service: kubectl get services
 
-Useful Commands
+## Useful Commands
 View Pods: kubectl get pods
 Describe Pod: kubectl describe pod <pod-name>
 View Logs: kubectl logs <pod-name>
 
-Delete Deployment:
+## Delete Deployment:
 kubectl delete deployment my-app-deployment
 
 Delete Service: kubectl delete service my-app-service
-
 Delete Everything: kubectl delete -f deployment.yaml
 kubectl delete -f service.yaml
- q
-Concepts Learned
+
+## Concepts Learned
 Docker image creation
 Containerizing static websites
 Kubernetes Deployments
@@ -72,5 +69,3 @@ Add monitoring and logging
 
 Author
 Haroon Malik
-
-This structure will look professional on GitHub and will scale well as you add Docker, Terraform, GitHub Actions, AWS, and other DevOps projects over time.
