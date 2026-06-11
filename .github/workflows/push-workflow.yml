@@ -1,4 +1,4 @@
-name: push-workflow
+name: Push Workflow
 
 on:
   push:
@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run a one-line script
+      - name: Print message
         run: echo "Hello, Haroon!"
