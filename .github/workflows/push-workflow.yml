@@ -1,4 +1,4 @@
-name: Push Workflow
+name: QA Pipeline
 
 on:
   push:
@@ -11,5 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print message
-        run: echo "Hello, Haroon!"
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Shows files in the repository
+        run: ls -la
+
+      - name: Show current directory
+        run: pwd
+
+      - name: Branches 
+        run: git branch  
+      
