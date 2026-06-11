@@ -1,44 +1,44 @@
-name: Deploy Docker Build
+#name: Deploy Docker Build
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+#on:
+#  push:
+#    branches:
+#      - main
+#  workflow_dispatch:
 
-env:
-  APP_NAME: my-app
+#env:
+#  APP_NAME: my-app
 
-jobs:
-  validate-job:
-    runs-on: ubuntu-latest
+#jobs:
+#  validate-job:
+#    runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
 
-  build-job:
-    runs-on: ubuntu-latest
-    needs: validate-job
+#  build-job:
+#    runs-on: ubuntu-latest
+#    needs: validate-job
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
 
-      - name: Show current directory and files
-        run: |
-          pwd
-          ls -la
+#      - name: Show current directory and files
+#        run: |
+#          pwd
+#          ls -la
 
-      - name: Build Docker Image
-        run: docker build -t ${{ env.APP_NAME }} ./kubernetes/nginx-static-site
-      - name: Show Docker Images
-        run: docker images
+#      - name: Build Docker Image
+#        run: docker build -t ${{ env.APP_NAME }} ./kubernetes/nginx-static-site
+#      - name: Show Docker Images
+#       run: docker images
 
-  deploy-job:
-    runs-on: ubuntu-latest
-    needs: build-job
+#  deploy-job:
+#    runs-on: ubuntu-latest
+#    needs: build-job
 
-    steps:
-      - name: Simulate Deploy
-        run: echo "Deploying Docker image..."
+#    steps:
+#      - name: Simulate Deploy
+#        run: echo "Deploying Docker image..."
