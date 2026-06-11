@@ -1,25 +1,25 @@
-name: QA Pipeline
+#name: QA Pipeline
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+#on:
+#  push:
+#    branches:
+#      - main
+#  workflow_dispatch:
 
-jobs:
-  push-job:
-    runs-on: ubuntu-latest
+#jobs:
+#  push-job:
+#    runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
 
-      - name: Shows files in the repository
-        run: ls -la
+#      - name: Shows files in the repository
+#        run: ls -la
 
-      - name: Show current directory
-        run: pwd
+#      - name: Show current directory
+#        run: pwd
 
-      - name: Branches 
-        run: git branch  
+#      - name: Branches 
+#        run: git branch  
       
