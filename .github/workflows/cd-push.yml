@@ -1,0 +1,33 @@
+name: CD - Push
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  IMAGE_NAME: my-static-site
+  APP_PATH: ./kubernetes/nginx-static-site
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t $IMAGE_NAME $APP_PATH
+
+      - name: Run Docker container
+        run: docker run -d --name my-site -p 8080:80 $IMAGE_NAME
+
+      - name: Wait for container
+        run: sleep 5
+
+      - name: Get response from container
+        run: curl -f http://localhost:8080
+
+      - name: Show running containers
+        run: docker ps
