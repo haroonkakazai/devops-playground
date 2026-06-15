@@ -8,5 +8,4 @@ def test_css_exists():
 
 def test_index_contains_heading():
     content = Path("index.html").read_text()
-
     assert "<h1>" in content
