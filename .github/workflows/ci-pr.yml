@@ -20,6 +20,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Debug test discovery
+        working-directory: ${{ env.APP_PATH }}
+        run: |
+          pwd
+          ls -la
+          find . -name "*.py"
+          cat test_site.py
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
