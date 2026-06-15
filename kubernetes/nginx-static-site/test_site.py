@@ -1,7 +1,8 @@
 from pathlib import Path
 
-def test_index_exists():
-    assert False
+def test_force_fail():
+    assert Path("non_existent_file.txt").exists()
+
 def test_css_exists():
     assert Path("style.css").exists()
 
