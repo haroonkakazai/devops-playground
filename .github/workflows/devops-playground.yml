@@ -50,5 +50,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Show Node.js version
-        run: node -v      
+        run: node -v
+        
+  call-reusable-workflow:
+    uses: ./.github/workflows/reuseable-workflow.yml            
 
