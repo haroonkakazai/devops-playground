@@ -1,7 +1,7 @@
 from pathlib import Path
 
 def test_index_exists():
-    assert Path("index.html").exists()
+    assert False
 
 def test_css_exists():
     assert Path("style.css").exists()
