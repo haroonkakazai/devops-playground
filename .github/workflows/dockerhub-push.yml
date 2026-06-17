@@ -37,7 +37,7 @@ jobs:
       - name: Push Docker Image
         run: |
           docker push \
-          ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.image_tag }}
 
       - name: Push commit SHA tag
         run: docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
