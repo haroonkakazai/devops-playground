@@ -16,6 +16,5 @@ spec:
       containers:
       - name: my-web
         image: haroonshahroom/my-static-site:latest
-        imagePullPolicy: Never
         ports:
         - containerPort: 80
