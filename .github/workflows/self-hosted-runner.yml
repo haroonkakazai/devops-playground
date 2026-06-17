@@ -1,0 +1,29 @@
+name: Deploy to Local Minikube
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Pull latest image
+        run: docker pull haroonshahroom/my-static-site:latest
+
+      - name: Apply Kubernetes manifests
+        run: |
+          kubectl apply -f kubernetes/nginx-static-site/deployment.yaml
+          kubectl apply -f kubernetes/nginx-static-site/service.yaml
+
+      - name: Restart deployment
+        run: kubectl rollout restart deployment my-static-site
+
+      - name: Check pods
+        run: kubectl get pods
+
+      - name: Test service
+        run: curl -f http://$(minikube ip):30080
